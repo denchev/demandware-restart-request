@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <title></title>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
+     -->
+    <script src='socket.io.js'></script>
+    <script src="jquery-2.1.0.min.js"></script>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    
+    <ul id="restarters"></ul><br>
+    Restarters count: <span id="restarters-count"></span>
+
+    <label for="restarter-name">Restarter name</label>
+    <input type="text" id="restarter-name" value="Marush">
+
+    <br>
+    <input type="button" value="Connect" id="connect">
+
+    <hr>
+
+    <label>Sandbox</label>
+    <input type="text" value="" id="sandbox">
+    <label>Request a restart</label><input type="button" value="Request" id="request"> 
+
+  </body>
+</html>
+
