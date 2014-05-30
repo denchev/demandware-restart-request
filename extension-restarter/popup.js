@@ -1,17 +1,35 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  document.getElementById('connect').addEventListener('click', function() {
+  var bgPage = chrome.extension.getBackgroundPage();
 
-    var bgPage = chrome.extension.getBackgroundPage();
+  var connectBtn = document.getElementById('connect');
+  var connectionStatus = bgPage.getStatus();
 
-    var register_name = document.getElementById('restarter-name').value;
+  console.log('Connection status: ', connectionStatus);
 
-    bgPage.register_name = register_name;
+  connectBtn.value = connectionStatus == 'connect' ? 'Disconnect' : 'Connect';
 
-    bgPage.connect();
+  connectBtn.addEventListener('click', function() {
+
+    if(connectionStatus == 'connect') {
+
+      console.log(bgPage);
+      bgPage.disconnect();
+
+      this.value = 'Connect';
+    } else {
+
+      var register_name = document.getElementById('restarter-name').value;
+
+      bgPage.register_name = register_name;
+
+      bgPage.connect();
+
+      this.value = 'Disconnect';
+    }
 
     return false;
-    
+
   }, false);
  
 });

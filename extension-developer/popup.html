@@ -12,6 +12,10 @@
     <script src='socket.io.js'></script>
     <script src="jquery-2.1.0.min.js"></script>
     <script src="popup.js"></script>
+    <style>
+    #restarters {list-style: none; margin: 0; padding: 0}
+    #restarters li {margin: 0; padding: 10px 0;}
+    </style>
   </head>
   <body>
     
@@ -22,12 +26,24 @@
 
     <hr>
 
+    <div>
     <label>Sandbox</label>
     <input type="text" value="dev30.web03.ecommera.demandware.net" id="sandbox"><br>
+    </div>
+
+    <div>
     <label>Your name</label>
-    <input type="text" value="Petar" id="name">
-    
-    <label>Request a restart</label><input type="button" value="Request" id="request"> 
+    <input type="text" value="Petar" id="name"><br>
+  </div>
+    <div>
+    <label>Priority</label><br>
+    <select>
+      <option>Minor</option>
+      <option>Major</option>
+      <option>Blocker</option>
+    </select>
+  </div>
+   <input type="button" value="Request a restart" id="request"> 
 
   </body>
 </html>
